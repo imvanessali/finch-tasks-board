@@ -1,120 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐦 小鸟军团指挥部</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="300">
+</head>
+<body>
+    <header>
+        <h1>🐦 小鸟军团指挥部</h1>
+        <p class="subtitle">Foca AI Growth Command Center</p>
+        <p class="last-updated">Last updated: 2026-02-14 03:03 UTC</p>
+    </header>
+    <div class="board-container">
+        
+        <div class="bird-column" style="--bird-color: #f59e0b">
+            <div class="bird-header">
+                <div class="bird-avatar">🐦</div>
+                <div class="bird-info">
+                    <h2>Finch</h2>
+                    <span class="bird-role">队长 · 协调指挥</span>
+                </div>
+            </div>
+            <div class="bird-model">🤖 Claude Opus</div>
+            <div class="bird-stats">2/2 任务运行中</div>
+            <div class="task-list">
+                
+        <div class="task-card status-active">
+            <div class="task-header">
+                <span class="task-name">早安问候 & 每日概览</span>
+                <span class='cron-id'>#c8ec2e94</span>
+            </div>
+            <div class="task-schedule">⏰ 每天 08:30</div>
+            
+            <div class="task-status">🟢 运行中</div>
+        </div>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Finch's Task Board</title>
-        <link rel="stylesheet" href="style.css">
-        <meta http-equiv="refresh" content="300">
-    </head>
-    <body>
-        <header>
-            <h1>🐦 Finch's Task Board</h1>
-            <p class="last-updated">Last updated: 2026-02-13 20:30:11 UTC</p>
-        </header>
-        <div class="board-container">
-            <div class="task-column">
-                <h2>Active Tasks (2)</h2>
-                <div class="card-container">
-                    
-        <div class="task-card">
-            <h3>Daily Tech Scout Report (PH, HF, GitHub)</h3>
-            <p><strong>ID:</strong> 1a2c228d</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>0 9 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> 2026-02-14 01:00:00 UTC</p>
-            <div class="status enabled">
-                <span class="status-dot"></span>
-                <span>Active</span>
+        <div class="task-card status-active">
+            <div class="task-header">
+                <span class="task-name">科技侦察报告</span>
+                <span class='cron-id'>#1a2c228d</span>
+            </div>
+            <div class="task-schedule">⏰ 每天 09:00</div>
+            <p class='task-desc'>Product Hunt + Hugging Face + GitHub 趋势</p>
+            <div class="task-status">🟢 运行中</div>
+        </div>
             </div>
         </div>
-        
-        <div class="task-card">
-            <h3>Morning Greeting & Daily Overview</h3>
-            <p><strong>ID:</strong> c8ec2e94</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>30 8 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> 2026-02-14 00:30:00 UTC</p>
-            <div class="status enabled">
-                <span class="status-dot"></span>
-                <span>Active</span>
-            </div>
-        </div>
-        
+
+        <div class="bird-column" style="--bird-color: #ef4444">
+            <div class="bird-header">
+                <div class="bird-avatar">🐤</div>
+                <div class="bird-info">
+                    <h2>Robin</h2>
+                    <span class="bird-role">推广官 · 增长黑客</span>
                 </div>
             </div>
-            <div class="task-column">
-                <h2>Paused Tasks (6)</h2>
-                <div class="card-container">
-                    
-        <div class="task-card">
-            <h3>AGI Video Recording Reminder</h3>
-            <p><strong>ID:</strong> a1f55ef3</p>
-            <p><strong>Schedule:</strong> Once at 2025-02-05 03:00:00 UTC</p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
+            <div class="bird-model">🤖 Claude Sonnet</div>
+            <div class="bird-stats">0/4 任务运行中</div>
+            <div class="task-list">
+                
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">小红书竞品监控</span>
+                
+            </div>
+            <div class="task-schedule">⏰ 每天 10:00</div>
+            <p class='task-desc'>监控产品摄影、抠图相关笔记和竞品动态</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">Twitter/X 增长追踪</span>
+                
+            </div>
+            <div class="task-schedule">⏰ 每天 14:00</div>
+            <p class='task-desc'>追踪 #ProductPhotography #AIPhoto 话题</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">ASO 关键词监控</span>
+                
+            </div>
+            <div class="task-schedule">⏰ 每周一 09:00</div>
+            <p class='task-desc'>App Store 关键词排名和竞品评分变化</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+
+        <div class="task-card status-paused">
+            <div class="task-header">
+                <span class="task-name">电商讨论区扫描</span>
+                <span class='cron-id'>#47a15972</span>
+            </div>
+            <div class="task-schedule">⏰ 每天 13:30</div>
+            <p class='task-desc'>Reddit/论坛产品摄影痛点挖掘</p>
+            <div class="task-status">⏸️ 已暂停</div>
+        </div>
             </div>
         </div>
-        
-        <div class="task-card">
-            <h3>Apple Small Business Program Enrollment Reminder</h3>
-            <p><strong>ID:</strong> b5d8d994</p>
-            <p><strong>Schedule:</strong> Once at 2025-02-05 02:00:00 UTC</p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
-            </div>
-        </div>
-        
-        <div class="task-card">
-            <h3>Daily E-commerce Product Photo Discussion Scan</h3>
-            <p><strong>ID:</strong> 47a15972</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>30 13 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
-            </div>
-        </div>
-        
-        <div class="task-card">
-            <h3>OpenClaw Update Monitor</h3>
-            <p><strong>ID:</strong> 7f650f40</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>0 10 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
-            </div>
-        </div>
-        
-        <div class="task-card">
-            <h3>Scour AI Content Daily Digest</h3>
-            <p><strong>ID:</strong> c92f4e4e</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>0 11 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
-            </div>
-        </div>
-        
-        <div class="task-card">
-            <h3>每日学习提醒</h3>
-            <p><strong>ID:</strong> 7185e3b2</p>
-            <p><strong>Schedule:</strong> <span class='schedule'>0 10 * * * (Asia/Shanghai)</span></p>
-            <p><strong>Next Run:</strong> Not scheduled</p>
-            <div class="status disabled">
-                <span class="status-dot"></span>
-                <span>Paused</span>
-            </div>
-        </div>
-        
+
+        <div class="bird-column" style="--bird-color: #22c55e">
+            <div class="bird-header">
+                <div class="bird-avatar">🐥</div>
+                <div class="bird-info">
+                    <h2>Sparrow</h2>
+                    <span class="bird-role">运维官 · 系统守护</span>
                 </div>
             </div>
+            <div class="bird-model">🤖 Gemini Flash</div>
+            <div class="bird-stats">0/2 任务运行中</div>
+            <div class="task-list">
+                
+        <div class="task-card status-paused">
+            <div class="task-header">
+                <span class="task-name">OpenClaw 更新检查</span>
+                <span class='cron-id'>#7f650f40</span>
+            </div>
+            <div class="task-schedule">⏰ 每天 10:00</div>
+            
+            <div class="task-status">⏸️ 已暂停</div>
         </div>
-    </body>
-    </html>
-    
+
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">邮件收件箱检查</span>
+                
+            </div>
+            <div class="task-schedule">⏰ Heartbeat</div>
+            <p class='task-desc'>检查重要邮件并汇报</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+            </div>
+        </div>
+
+        <div class="bird-column" style="--bird-color: #8b5cf6">
+            <div class="bird-header">
+                <div class="bird-avatar">🦉</div>
+                <div class="bird-info">
+                    <h2>Owl</h2>
+                    <span class="bird-role">研究员 · 深度分析</span>
+                </div>
+            </div>
+            <div class="bird-model">🤖 Claude Opus</div>
+            <div class="bird-stats">0/2 任务运行中</div>
+            <div class="task-list">
+                
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">用户反馈分析</span>
+                
+            </div>
+            <div class="task-schedule">⏰ 每周五 15:00</div>
+            <p class='task-desc'>汇总 App Store 评论 + 用户反馈</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+
+        <div class="task-card status-planned">
+            <div class="task-header">
+                <span class="task-name">竞品深度分析</span>
+                
+            </div>
+            <div class="task-schedule">⏰ 每月 1 号</div>
+            <p class='task-desc'>PhotoRoom, Remove.bg 等竞品功能对比</p>
+            <div class="task-status">📋 待配置</div>
+        </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Powered by OpenClaw 🦞 | 小鸟军团为 Foca AI 服务</p>
+    </footer>
+</body>
+</html>

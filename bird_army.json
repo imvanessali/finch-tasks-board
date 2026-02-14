@@ -1,0 +1,116 @@
+{
+  "title": "🐦 小鸟军团指挥部",
+  "subtitle": "Foca AI Growth Command Center",
+  "birds": [
+    {
+      "id": "finch",
+      "name": "Finch",
+      "emoji": "🐦",
+      "role": "队长 · 协调指挥",
+      "model": "Claude Opus",
+      "color": "#f59e0b",
+      "description": "主协调员，负责日常简报和科技情报收集"
+    },
+    {
+      "id": "robin",
+      "name": "Robin",
+      "emoji": "🐤",
+      "role": "推广官 · 增长黑客",
+      "model": "Claude Sonnet",
+      "color": "#ef4444",
+      "description": "专注 Foca AI 的市场推广和用户增长"
+    },
+    {
+      "id": "sparrow",
+      "name": "Sparrow",
+      "emoji": "🐥",
+      "role": "运维官 · 系统守护",
+      "model": "Gemini Flash",
+      "color": "#22c55e",
+      "description": "负责系统监控、更新检查和日常运维"
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "emoji": "🦉",
+      "role": "研究员 · 深度分析",
+      "model": "Claude Opus",
+      "color": "#8b5cf6",
+      "description": "深度研究、市场分析和战略建议"
+    }
+  ],
+  "tasks": [
+    {
+      "bird": "finch",
+      "name": "早安问候 & 每日概览",
+      "schedule": "每天 08:30",
+      "status": "active",
+      "cronId": "c8ec2e94"
+    },
+    {
+      "bird": "finch",
+      "name": "科技侦察报告",
+      "schedule": "每天 09:00",
+      "status": "active",
+      "cronId": "1a2c228d",
+      "description": "Product Hunt + Hugging Face + GitHub 趋势"
+    },
+    {
+      "bird": "robin",
+      "name": "小红书竞品监控",
+      "schedule": "每天 10:00",
+      "status": "planned",
+      "description": "监控产品摄影、抠图相关笔记和竞品动态"
+    },
+    {
+      "bird": "robin",
+      "name": "Twitter/X 增长追踪",
+      "schedule": "每天 14:00",
+      "status": "planned",
+      "description": "追踪 #ProductPhotography #AIPhoto 话题"
+    },
+    {
+      "bird": "robin",
+      "name": "ASO 关键词监控",
+      "schedule": "每周一 09:00",
+      "status": "planned",
+      "description": "App Store 关键词排名和竞品评分变化"
+    },
+    {
+      "bird": "robin",
+      "name": "电商讨论区扫描",
+      "schedule": "每天 13:30",
+      "status": "paused",
+      "cronId": "47a15972",
+      "description": "Reddit/论坛产品摄影痛点挖掘"
+    },
+    {
+      "bird": "sparrow",
+      "name": "OpenClaw 更新检查",
+      "schedule": "每天 10:00",
+      "status": "paused",
+      "cronId": "7f650f40"
+    },
+    {
+      "bird": "sparrow",
+      "name": "邮件收件箱检查",
+      "schedule": "Heartbeat",
+      "status": "planned",
+      "description": "检查重要邮件并汇报"
+    },
+    {
+      "bird": "owl",
+      "name": "用户反馈分析",
+      "schedule": "每周五 15:00",
+      "status": "planned",
+      "description": "汇总 App Store 评论 + 用户反馈"
+    },
+    {
+      "bird": "owl",
+      "name": "竞品深度分析",
+      "schedule": "每月 1 号",
+      "status": "planned",
+      "description": "PhotoRoom, Remove.bg 等竞品功能对比"
+    }
+  ]
+}
