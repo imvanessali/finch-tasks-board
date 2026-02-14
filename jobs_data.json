@@ -1,0 +1,184 @@
+{
+  "jobs": [
+    {
+      "id": "b5d8d994-958a-438b-922c-51ad2d82555b",
+      "agentId": "main",
+      "name": "Apple Small Business Program Enrollment Reminder",
+      "enabled": false,
+      "createdAtMs": 1770214707126,
+      "updatedAtMs": 1770214707133,
+      "schedule": {
+        "kind": "at",
+        "atMs": 1738720800000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "text": "Vanessa, reminder to enroll in the Apple Small Business Program to reduce your App Store commission to 15%: https://developer.apple.com/app-store/small-business-program/enroll/ (context: you requested this yesterday to help with Foca AI growth).",
+        "kind": "systemEvent"
+      },
+      "state": {
+        "lastRunAtMs": 1770214707133,
+        "lastStatus": "ok",
+        "lastDurationMs": 1
+      }
+    },
+    {
+      "id": "a1f55ef3-32cf-4328-90ae-83041f964141",
+      "agentId": "main",
+      "name": "AGI Video Recording Reminder",
+      "enabled": false,
+      "createdAtMs": 1770217904785,
+      "updatedAtMs": 1770217904787,
+      "schedule": {
+        "atMs": 1738724400000,
+        "kind": "at"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Vanessa, time to record the video about AGI/ASI timelines (referencing the Lex Clips content you shared: \"Timeline for AGI: 2030 with 50% chance\"). Context: You sent a screenshot of Lex Clips discussing AGI by 2030."
+      },
+      "state": {
+        "lastRunAtMs": 1770217904787,
+        "lastStatus": "ok",
+        "lastDurationMs": 0
+      }
+    },
+    {
+      "id": "47a15972-1baa-469c-b646-204d5e59b22a",
+      "agentId": "main",
+      "name": "Daily E-commerce Product Photo Discussion Scan",
+      "enabled": false,
+      "createdAtMs": 1770261401656,
+      "updatedAtMs": 1770533576662,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 13 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the script at `scripts/scan_discussions.py`. \nFormat the findings into actionable insights for Foca AI.\n\nURGENT DELIVERY INSTRUCTION: Use the `message` tool to send the final report DIRECTLY to target 1468994167274471612 on Discord immediately. Do not skip this step."
+      },
+      "state": {
+        "lastRunAtMs": 1770528600006,
+        "lastStatus": "ok",
+        "lastDurationMs": 40904
+      }
+    },
+    {
+      "id": "7f650f40-291a-462d-abd1-de58c86d8c3f",
+      "agentId": "main",
+      "name": "OpenClaw Update Monitor",
+      "createdAtMs": 1770513692655,
+      "updatedAtMs": 1770994107202,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check if there's a new OpenClaw update available. \n\nIf an update is available:\n1. Apply the update using `gateway` tool with action `update.run`\n2. Send a brief notification to Discord channel 1468994167274471612 saying the update was applied automatically\n\nIf no update is available, do nothing (no notification needed)."
+      },
+      "state": {},
+      "enabled": false
+    },
+    {
+      "id": "c92f4e4e-4db2-4cde-b363-1304932bcab3",
+      "agentId": "main",
+      "name": "Scour AI Content Daily Digest",
+      "createdAtMs": 1770516152785,
+      "updatedAtMs": 1770994107164,
+      "schedule": {
+        "expr": "0 11 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行脚本 `python3 scripts/scour_fetcher.py` 来抓取 Scour 上的AI相关内容。\n\n抓取完成后，使用 `message` 工具将结果发送到 Discord 频道 1468994167274471612。格式如下：\n\n🐦 **Scour 每日AI精选** — [日期]\n\n**AI Application:**\n• [标题] — [来源] — <链接>\n...\n\n**AI:**\n• [标题] — [来源] — <链接>\n...\n\n如果没有新内容，发送 \"今天Scour没有新的AI相关内容\" 即可。"
+      },
+      "state": {},
+      "enabled": false
+    },
+    {
+      "id": "7185e3b2-f7a8-40b0-bca9-4ea838c359b4",
+      "agentId": "main",
+      "name": "每日学习提醒",
+      "createdAtMs": 1770782605582,
+      "updatedAtMs": 1770994301178,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "📚 **今日学习提醒**\n\n今天别忘了：\n1. 学习一个新技能（查看 memory/learning-plan.md）\n2. 阅读对应的 SKILL.md\n3. 实际操作练习\n4. 记录学习笔记\n\n当前待学清单：cursor-agent, marketing-mode, browser-use, xai-search...\n\n加油！🐦"
+      },
+      "state": {},
+      "enabled": false
+    },
+    {
+      "id": "c8ec2e94-7cf1-46c5-ba9a-8b30280112ca",
+      "agentId": "main",
+      "name": "Morning Greeting & Daily Overview",
+      "enabled": true,
+      "createdAtMs": 1770344091362,
+      "updatedAtMs": 1770942600030,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "It's morning! Start by greeting Vanessa warmly as Finch. Use the weather skill to get the current weather and forecast for Shanghai. Mention if any of our automated scans (Industry Report at 9:00, Discussion Scan at 13:30) are on track.\n\nCRITICAL: You must DELIVER this greeting to Vanessa. Use the `message` tool to send the final greeting DIRECTLY to Discord channel 1468994167274471612. Do not just generate it — actually send it!"
+      },
+      "state": {
+        "nextRunAtMs": 1771029000000,
+        "lastRunAtMs": 1770942600030,
+        "lastStatus": "ok",
+        "lastDurationMs": 7288
+      }
+    },
+    {
+      "id": "1a2c228d-e00c-4fe9-96e5-ed143fdf7809",
+      "agentId": "main",
+      "name": "Daily Tech Scout Report (PH, HF, GitHub)",
+      "enabled": true,
+      "createdAtMs": 1770261401695,
+      "updatedAtMs": 1770994107233,
+      "schedule": {
+        "tz": "Asia/Shanghai",
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "message": "## 科技侦察报告生成任务\n\n**Step 1: 收集数据**\n```bash\ncd /Users/vanessa/.openclaw/workspace\npython3 scripts/generate_learning_digest.py\npython3 scripts/scour_fetcher.py\n```\n\n**Step 2: AI 深度分析**\n读取生成的数据，对每项内容填充：\n\n**概念（Concept）**：这是什么技术/产品？核心原理解释\n\n**启发（Insight）**：通用灵感启发（不限定 Foca AI）\n\n**行动（Action）**：可采取的行动建议\n\n**Step 3: 整合 Scour AI 内容**\n把 Scour 抓取的内容也按同样格式分析，合并到报告中。\n\n**Step 4: 质量门禁自检**\n- [ ] 每条都有概念解释（不只是标题）\n- [ ] 都有启发分析（general inspiration）\n- [ ] 都有可行动建议\n- [ ] 没有 30 天内重复内容\n\n**Step 5: 输出并交付**\n使用 `message` 工具发送到 Discord channel 1468994167274471612\n\n**格式示例：**\n```\n📚 科技侦察报告 - 2026-02-14\n\n## Product Hunt / GitHub / Hugging Face\n**1. [项目名]**\n• **概念**：...\n• **启发**：...\n• **行动**：...\n• **链接**：<url>\n\n## Scour AI 精选\n**1. [标题]**\n• **概念**：...\n• **启发**：...\n• **行动**：...\n• **链接**：<url>\n```",
+        "kind": "agentTurn"
+      },
+      "state": {
+        "nextRunAtMs": 1771030800000,
+        "lastRunAtMs": 1770944400001,
+        "lastStatus": "ok",
+        "lastDurationMs": 8067
+      }
+    }
+  ]
+}

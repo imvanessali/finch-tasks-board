@@ -6,32 +6,113 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Finch's Task Board</title>
         <link rel="stylesheet" href="style.css">
+        <meta http-equiv="refresh" content="300">
     </head>
     <body>
-        <div class="board-header">
+        <header>
             <h1>🐦 Finch's Task Board</h1>
-            <p>What your favorite little bird is working on! Last updated: 2026-02-13 23:57:33</p>
-        </div>
-        <div class="board">
-            <div class="column">
-                <h2>Active Tasks (1)</h2>
-                
-        <div class="card">
-            <h3>Mock Task 1 (Active)</h3>
-            <p><strong>Schedule:</strong> <code>30 8 * * *</code></p>
-            <p><strong>Next Run:</strong> 2026-02-14 08:30:00</p>
-        </div>
-        
+            <p class="last-updated">Last updated: 2026-02-13 20:30:11 UTC</p>
+        </header>
+        <div class="board-container">
+            <div class="task-column">
+                <h2>Active Tasks (2)</h2>
+                <div class="card-container">
+                    
+        <div class="task-card">
+            <h3>Daily Tech Scout Report (PH, HF, GitHub)</h3>
+            <p><strong>ID:</strong> 1a2c228d</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>0 9 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> 2026-02-14 01:00:00 UTC</p>
+            <div class="status enabled">
+                <span class="status-dot"></span>
+                <span>Active</span>
             </div>
-            <div class="column">
-                <h2>Paused Tasks (1)</h2>
-                
-        <div class="card">
-            <h3>Mock Task 2 (Disabled)</h3>
-            <p><strong>Schedule:</strong> <code>0 10 * * *</code></p>
-            <p><strong>Next Run:</strong> N/A</p>
         </div>
         
+        <div class="task-card">
+            <h3>Morning Greeting & Daily Overview</h3>
+            <p><strong>ID:</strong> c8ec2e94</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>30 8 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> 2026-02-14 00:30:00 UTC</p>
+            <div class="status enabled">
+                <span class="status-dot"></span>
+                <span>Active</span>
+            </div>
+        </div>
+        
+                </div>
+            </div>
+            <div class="task-column">
+                <h2>Paused Tasks (6)</h2>
+                <div class="card-container">
+                    
+        <div class="task-card">
+            <h3>AGI Video Recording Reminder</h3>
+            <p><strong>ID:</strong> a1f55ef3</p>
+            <p><strong>Schedule:</strong> Once at 2025-02-05 03:00:00 UTC</p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <h3>Apple Small Business Program Enrollment Reminder</h3>
+            <p><strong>ID:</strong> b5d8d994</p>
+            <p><strong>Schedule:</strong> Once at 2025-02-05 02:00:00 UTC</p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <h3>Daily E-commerce Product Photo Discussion Scan</h3>
+            <p><strong>ID:</strong> 47a15972</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>30 13 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <h3>OpenClaw Update Monitor</h3>
+            <p><strong>ID:</strong> 7f650f40</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>0 10 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <h3>Scour AI Content Daily Digest</h3>
+            <p><strong>ID:</strong> c92f4e4e</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>0 11 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <h3>每日学习提醒</h3>
+            <p><strong>ID:</strong> 7185e3b2</p>
+            <p><strong>Schedule:</strong> <span class='schedule'>0 10 * * * (Asia/Shanghai)</span></p>
+            <p><strong>Next Run:</strong> Not scheduled</p>
+            <div class="status disabled">
+                <span class="status-dot"></span>
+                <span>Paused</span>
+            </div>
+        </div>
+        
+                </div>
             </div>
         </div>
     </body>

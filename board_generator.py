@@ -1,32 +1,60 @@
-
 import json
-import subprocess
-from datetime import datetime
+import sys
+from datetime import datetime, timezone
 
-def get_cron_jobs():
-    """Fetches all cron jobs using the openclaw cli."""
-    try:
-        # We need to call the openclaw executable from the agent's context
-        # Assuming it's in the PATH or we need a full path.
-        # For now, let's assume `openclaw` is callable.
-        result = subprocess.run(['openclaw', 'cron', 'list', '--includeDisabled', '--json'], capture_output=True, text=True, check=True)
-        data = json.loads(result.stdout)
-        return data.get('jobs', [])
-    except (subprocess.CalledProcessError, FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error fetching cron jobs: {e}")
-        # Return mock data for development if the CLI isn't available
-        return [
-            {'name': 'Mock Task 1 (Active)', 'enabled': True, 'schedule': {'kind': 'cron', 'expr': '30 8 * * *'}, 'state': {'nextRunAtMs': 1771029000000}},
-            {'name': 'Mock Task 2 (Disabled)', 'enabled': False, 'schedule': {'kind': 'cron', 'expr': '0 10 * * *'}, 'state': {}},
-        ]
+def format_timestamp(ms):
+    """Converts a millisecond timestamp to a readable string."""
+    if not ms:
+        return "Not scheduled"
+    # Assuming the timestamp is in UTC
+    dt = datetime.fromtimestamp(ms / 1000, tz=timezone.utc)
+    # This will display the time in UTC, which is fine for a technical dashboard
+    return dt.strftime('%Y-%m-%d %H:%M:%S %Z')
 
-def generate_html(jobs):
-    """Generates the HTML content for the task board."""
-    
-    active_jobs = sorted([job for job in jobs if job.get('enabled')], key=lambda x: x['schedule'].get('expr', ''))
-    disabled_jobs = sorted([job for job in jobs if not job.get('enabled')], key=lambda x: x['schedule'].get('expr', ''))
+def generate_html_board(jobs_data):
+    """Generates the HTML content for the Trello-style board."""
+    enabled_jobs = sorted([job for job in jobs_data.get('jobs', []) if job.get('enabled')], key=lambda x: x.get('name', ''))
+    disabled_jobs = sorted([job for job in jobs_data.get('jobs', []) if not job.get('enabled')], key=lambda x: x.get('name', ''))
 
-    html_content = """
+    def create_card(job):
+        job_id = job.get('id', 'N/A')
+        name = job.get('name', 'Unnamed Job')
+        schedule = job.get('schedule', {})
+        schedule_str = "N/A"
+        if schedule.get('kind') == 'cron':
+            schedule_str = f"<span class='schedule'>{schedule.get('expr')} ({schedule.get('tz', 'UTC')})</span>"
+        elif schedule.get('kind') == 'every':
+            minutes = int(schedule.get('everyMs', 0) / 60000)
+            schedule_str = f"Every {minutes} minutes"
+        elif schedule.get('kind') == 'at':
+            at_time = format_timestamp(schedule.get('atMs'))
+            schedule_str = f"Once at {at_time}"
+
+        # Use the 'nextRunAtMs' from the state for upcoming run
+        next_run = format_timestamp(job.get('state', {}).get('nextRunAtMs'))
+        status_class = "enabled" if job.get('enabled') else "disabled"
+        status_text = "Active" if job.get('enabled') else "Paused"
+
+        return f"""
+        <div class="task-card">
+            <h3>{name}</h3>
+            <p><strong>ID:</strong> {job_id[:8]}</p>
+            <p><strong>Schedule:</strong> {schedule_str}</p>
+            <p><strong>Next Run:</strong> {next_run}</p>
+            <div class="status {status_class}">
+                <span class="status-dot"></span>
+                <span>{status_text}</span>
+            </div>
+        </div>
+        """
+
+    enabled_cards = "".join([create_card(job) for job in enabled_jobs])
+    disabled_cards = "".join([create_card(job) for job in disabled_jobs])
+
+    # Using UTC now and converting to a specific format.
+    last_updated_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S %Z')
+
+    html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -34,74 +62,54 @@ def generate_html(jobs):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Finch's Task Board</title>
         <link rel="stylesheet" href="style.css">
+        <meta http-equiv="refresh" content="300">
     </head>
     <body>
-        <div class="board-header">
+        <header>
             <h1>🐦 Finch's Task Board</h1>
-            <p>What your favorite little bird is working on! Last updated: {update_time}</p>
-        </div>
-        <div class="board">
-            <div class="column">
-                <h2>Active Tasks ({active_count})</h2>
-                {active_cards}
+            <p class="last-updated">Last updated: {last_updated_time}</p>
+        </header>
+        <div class="board-container">
+            <div class="task-column">
+                <h2>Active Tasks ({len(enabled_jobs)})</h2>
+                <div class="card-container">
+                    {enabled_cards if enabled_cards else "<p class='empty-state'>No active tasks!</p>"}
+                </div>
             </div>
-            <div class="column">
-                <h2>Paused Tasks ({disabled_count})</h2>
-                {disabled_cards}
+            <div class="task-column">
+                <h2>Paused Tasks ({len(disabled_jobs)})</h2>
+                <div class="card-container">
+                    {disabled_cards if disabled_cards else "<p class='empty-state'>No paused tasks!</p>"}
+                </div>
             </div>
         </div>
     </body>
     </html>
     """
-
-    def create_card(job):
-        schedule = job.get('schedule', {})
-        schedule_str = "N/A"
-        if schedule.get('kind') == 'cron':
-            schedule_str = f"<code>{schedule.get('expr', 'N/A')}</code>"
-        elif schedule.get('kind') == 'every':
-            interval_ms = schedule.get('everyMs', 0)
-            schedule_str = f"Every {interval_ms / 1000 / 60:.0f} minutes"
-
-        next_run_str = "N/A"
-        next_run_ms = job.get('state', {}).get('nextRunAtMs')
-        if next_run_ms:
-            next_run_dt = datetime.fromtimestamp(next_run_ms / 1000)
-            next_run_str = next_run_dt.strftime('%Y-%m-%d %H:%M:%S')
-
-        return f"""
-        <div class="card">
-            <h3>{job.get('name', 'Unnamed Task')}</h3>
-            <p><strong>Schedule:</strong> {schedule_str}</p>
-            <p><strong>Next Run:</strong> {next_run_str}</p>
-        </div>
-        """
-
-    active_cards_html = "".join(create_card(job) for job in active_jobs)
-    disabled_cards_html = "".join(create_card(job) for job in disabled_jobs)
-    
-    update_time_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    return html_content.format(
-        update_time=update_time_str,
-        active_count=len(active_jobs),
-        disabled_count=len(disabled_jobs),
-        active_cards=active_cards_html,
-        disabled_cards=disabled_cards_html
-    )
+    return html_content
 
 def main():
-    """Main function to generate and write the HTML file."""
-    print("Fetching cron jobs...")
-    jobs = get_cron_jobs()
-    print(f"Found {len(jobs)} total jobs.")
+    """Main function to generate and write the task board from a file."""
+    print("Reading cron job data from jobs_data.json...")
+    try:
+        with open('jobs_data.json', 'r', encoding='utf-8') as f:
+            jobs_data = json.load(f)
+    except FileNotFoundError:
+        print("Error: jobs_data.json not found.", file=sys.stderr)
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON in jobs_data.json.", file=sys.stderr)
+        sys.exit(1)
     
-    print("Generating HTML content...")
-    html = generate_html(jobs)
+    print("Generating HTML board...")
+    html = generate_html_board(jobs_data)
     
-    with open("index.html", "w") as f:
+    output_path = 'index.html'
+    print(f"Writing board to {output_path}...")
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    print("index.html has been updated successfully! ✨")
+        
+    print("Board generated successfully! 啾!")
 
 if __name__ == "__main__":
     main()
