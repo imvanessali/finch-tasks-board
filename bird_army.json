@@ -9,34 +9,34 @@
       "role": "队长 · 协调指挥",
       "model": "Claude Opus",
       "color": "#f59e0b",
-      "description": "主协调员，负责日常简报和科技情报收集"
+      "description": "协调团队，安排任务，与 Vanessa 沟通"
     },
     {
       "id": "robin",
       "name": "Robin",
       "emoji": "🐤",
-      "role": "推广官 · 增长黑客",
+      "role": "SEO 专员",
       "model": "Claude Sonnet",
       "color": "#ef4444",
-      "description": "专注 Foca AI 的市场推广和用户增长"
+      "description": "关键词研究、SEO 内容策略、博客撰写"
     },
     {
       "id": "sparrow",
       "name": "Sparrow",
       "emoji": "🐥",
-      "role": "运维官 · 系统守护",
+      "role": "SNS 猎手",
       "model": "Gemini Flash",
       "color": "#22c55e",
-      "description": "负责系统监控、更新检查和日常运维"
+      "description": "在社交平台挖掘潜在用户和产品摄影痛点"
     },
     {
       "id": "owl",
       "name": "Owl",
       "emoji": "🦉",
-      "role": "研究员 · 深度分析",
-      "model": "Claude Opus",
+      "role": "日常监控",
+      "model": "Gemini Flash",
       "color": "#8b5cf6",
-      "description": "深度研究、市场分析和战略建议"
+      "description": "科技情报收集、行业动态追踪"
     }
   ],
   "tasks": [
@@ -45,10 +45,67 @@
       "name": "早安问候 & 每日概览",
       "schedule": "每天 08:30",
       "status": "active",
-      "cronId": "c8ec2e94"
+      "cronId": "c8ec2e94",
+      "description": "天气 + 日历 + 当日重点"
     },
     {
       "bird": "finch",
+      "name": "协调团队任务",
+      "schedule": "按需",
+      "status": "active",
+      "description": "分配任务给其他小鸟，汇总结果"
+    },
+    {
+      "bird": "finch",
+      "name": "与 Vanessa 沟通",
+      "schedule": "实时",
+      "status": "active",
+      "description": "接收指令，汇报进展"
+    },
+    {
+      "bird": "robin",
+      "name": "关键词趋势研究",
+      "schedule": "每周一 09:00",
+      "status": "planned",
+      "description": "分析 product photography, background remover 等关键词搜索趋势"
+    },
+    {
+      "bird": "robin",
+      "name": "拟定 SEO Blog 标题",
+      "schedule": "每周一 10:00",
+      "status": "planned",
+      "description": "基于关键词研究，提出 3-5 个博客选题"
+    },
+    {
+      "bird": "robin",
+      "name": "撰写 Blog Post",
+      "schedule": "按需",
+      "status": "planned",
+      "description": "撰写 SEO 优化的博客文章草稿"
+    },
+    {
+      "bird": "sparrow",
+      "name": "Twitter 潜在用户挖掘",
+      "schedule": "每天 10:00",
+      "status": "planned",
+      "description": "搜索产品摄影相关推文，找有痛点的用户"
+    },
+    {
+      "bird": "sparrow",
+      "name": "Instagram 潜在用户挖掘",
+      "schedule": "每天 14:00",
+      "status": "planned",
+      "description": "找小店主、手工卖家等拍产品图的用户"
+    },
+    {
+      "bird": "sparrow",
+      "name": "Reddit 潜在用户挖掘",
+      "schedule": "每天 16:00",
+      "status": "planned",
+      "description": "监控 r/smallbusiness, r/Etsy, r/ecommerce 等"
+    },
+    {
+      "bird": "owl",
       "name": "科技侦察报告",
       "schedule": "每天 09:00",
       "status": "active",
@@ -56,61 +113,11 @@
       "description": "Product Hunt + Hugging Face + GitHub 趋势"
     },
     {
-      "bird": "robin",
-      "name": "小红书竞品监控",
-      "schedule": "每天 10:00",
-      "status": "planned",
-      "description": "监控产品摄影、抠图相关笔记和竞品动态"
-    },
-    {
-      "bird": "robin",
-      "name": "Twitter/X 增长追踪",
-      "schedule": "每天 14:00",
-      "status": "planned",
-      "description": "追踪 #ProductPhotography #AIPhoto 话题"
-    },
-    {
-      "bird": "robin",
-      "name": "ASO 关键词监控",
-      "schedule": "每周一 09:00",
-      "status": "planned",
-      "description": "App Store 关键词排名和竞品评分变化"
-    },
-    {
-      "bird": "robin",
-      "name": "电商讨论区扫描",
-      "schedule": "每天 13:30",
-      "status": "paused",
-      "cronId": "47a15972",
-      "description": "Reddit/论坛产品摄影痛点挖掘"
-    },
-    {
-      "bird": "sparrow",
-      "name": "OpenClaw 更新检查",
-      "schedule": "每天 10:00",
-      "status": "paused",
-      "cronId": "7f650f40"
-    },
-    {
-      "bird": "sparrow",
-      "name": "邮件收件箱检查",
-      "schedule": "Heartbeat",
-      "status": "planned",
-      "description": "检查重要邮件并汇报"
-    },
-    {
       "bird": "owl",
-      "name": "用户反馈分析",
-      "schedule": "每周五 15:00",
+      "name": "竞品动态监控",
+      "schedule": "每周三 09:00",
       "status": "planned",
-      "description": "汇总 App Store 评论 + 用户反馈"
-    },
-    {
-      "bird": "owl",
-      "name": "竞品深度分析",
-      "schedule": "每月 1 号",
-      "status": "planned",
-      "description": "PhotoRoom, Remove.bg 等竞品功能对比"
+      "description": "PhotoRoom, Remove.bg 功能更新追踪"
     }
   ]
 }
