@@ -12,13 +12,13 @@
       "description": "协调团队，安排任务，与 Vanessa 沟通"
     },
     {
-      "id": "robin",
-      "name": "Robin",
-      "emoji": "🐤",
-      "role": "SEO 专员",
-      "model": "Claude Sonnet",
-      "color": "#ef4444",
-      "description": "关键词研究、SEO 内容策略、博客撰写"
+      "id": "owl",
+      "name": "Owl",
+      "emoji": "🦉",
+      "role": "日常监控",
+      "model": "Gemini Flash",
+      "color": "#8b5cf6",
+      "description": "科技情报收集、行业动态追踪"
     },
     {
       "id": "sparrow",
@@ -30,13 +30,13 @@
       "description": "在社交平台挖掘潜在用户和产品摄影痛点"
     },
     {
-      "id": "owl",
-      "name": "Owl",
-      "emoji": "🦉",
-      "role": "日常监控",
-      "model": "Gemini Flash",
-      "color": "#8b5cf6",
-      "description": "科技情报收集、行业动态追踪"
+      "id": "robin",
+      "name": "Robin",
+      "emoji": "🐤",
+      "role": "SEO 专员",
+      "model": "Claude Sonnet",
+      "color": "#ef4444",
+      "description": "关键词研究、SEO 内容策略、博客撰写"
     }
   ],
   "tasks": [
@@ -50,59 +50,10 @@
     },
     {
       "bird": "finch",
-      "name": "协调团队任务",
-      "schedule": "按需",
-      "status": "active",
-      "description": "分配任务给其他小鸟，汇总结果"
-    },
-    {
-      "bird": "finch",
-      "name": "与 Vanessa 沟通",
+      "name": "协调团队 & 与 Vanessa 沟通",
       "schedule": "实时",
       "status": "active",
-      "description": "接收指令，汇报进展"
-    },
-    {
-      "bird": "robin",
-      "name": "关键词趋势研究",
-      "schedule": "每周一 09:00",
-      "status": "planned",
-      "description": "分析 product photography, background remover 等关键词搜索趋势"
-    },
-    {
-      "bird": "robin",
-      "name": "拟定 SEO Blog 标题",
-      "schedule": "每周一 10:00",
-      "status": "planned",
-      "description": "基于关键词研究，提出 3-5 个博客选题"
-    },
-    {
-      "bird": "robin",
-      "name": "撰写 Blog Post",
-      "schedule": "按需",
-      "status": "planned",
-      "description": "撰写 SEO 优化的博客文章草稿"
-    },
-    {
-      "bird": "sparrow",
-      "name": "Twitter 潜在用户挖掘",
-      "schedule": "每天 10:00",
-      "status": "planned",
-      "description": "搜索产品摄影相关推文，找有痛点的用户"
-    },
-    {
-      "bird": "sparrow",
-      "name": "Instagram 潜在用户挖掘",
-      "schedule": "每天 14:00",
-      "status": "planned",
-      "description": "找小店主、手工卖家等拍产品图的用户"
-    },
-    {
-      "bird": "sparrow",
-      "name": "Reddit 潜在用户挖掘",
-      "schedule": "每天 16:00",
-      "status": "planned",
-      "description": "监控 r/smallbusiness, r/Etsy, r/ecommerce 等"
+      "description": "分配任务，汇报进展"
     },
     {
       "bird": "owl",
@@ -110,14 +61,47 @@
       "schedule": "每天 09:00",
       "status": "active",
       "cronId": "1a2c228d",
-      "description": "Product Hunt + Hugging Face + GitHub 趋势"
+      "description": "Product Hunt + Hugging Face + GitHub + Scour AI"
     },
     {
-      "bird": "owl",
-      "name": "竞品动态监控",
-      "schedule": "每周三 09:00",
-      "status": "planned",
-      "description": "PhotoRoom, Remove.bg 功能更新追踪"
+      "bird": "sparrow",
+      "name": "Twitter 潜在用户挖掘",
+      "schedule": "每天 10:00",
+      "status": "active",
+      "cronId": "0e7edc91",
+      "description": "搜索产品摄影相关痛点推文"
+    },
+    {
+      "bird": "sparrow",
+      "name": "Instagram 潜在用户挖掘",
+      "schedule": "每天 14:00",
+      "status": "active",
+      "cronId": "6d117f97",
+      "description": "找小店主、手工卖家"
+    },
+    {
+      "bird": "sparrow",
+      "name": "Reddit 潜在用户挖掘",
+      "schedule": "每天 16:00",
+      "status": "active",
+      "cronId": "3beeb6b5",
+      "description": "监控 r/smallbusiness, r/Etsy 等"
+    },
+    {
+      "bird": "robin",
+      "name": "关键词趋势研究",
+      "schedule": "每周一 09:00",
+      "status": "active",
+      "cronId": "a3f1c8d2",
+      "description": "分析 SEO 关键词搜索趋势"
+    },
+    {
+      "bird": "robin",
+      "name": "博客选题生成",
+      "schedule": "每周一 10:00",
+      "status": "active",
+      "cronId": "b7e2d9f4",
+      "description": "基于关键词研究提出博客选题"
     }
   ]
 }
