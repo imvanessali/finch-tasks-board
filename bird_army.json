@@ -80,26 +80,18 @@
       "description": "找小店主、手工卖家"
     },
     {
-      "bird": "sparrow",
-      "name": "Reddit 潜在用户挖掘",
-      "schedule": "每天 16:00",
-      "status": "active",
-      "cronId": "3beeb6b5",
-      "description": "监控 r/smallbusiness, r/Etsy 等"
-    },
-    {
       "bird": "robin",
       "name": "关键词趋势研究",
-      "schedule": "每周一 09:00",
-      "status": "active",
+      "schedule": "手动触发 / 双周提醒",
+      "status": "manual",
       "cronId": "a3f1c8d2",
-      "description": "分析 SEO 关键词搜索趋势"
+      "description": "分析 SEO 关键词搜索趋势和竞争度"
     },
     {
       "bird": "robin",
       "name": "博客选题生成",
-      "schedule": "每周一 10:00",
-      "status": "active",
+      "schedule": "手动触发 / 双周提醒", 
+      "status": "manual",
       "cronId": "b7e2d9f4",
       "description": "基于关键词研究提出博客选题"
     }
