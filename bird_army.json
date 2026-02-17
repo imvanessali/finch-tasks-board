@@ -25,9 +25,9 @@
       "name": "Owl",
       "emoji": "🦉",
       "role": "日常监控",
-      "model": "手动触发",
+      "model": "GLM-4.6V",
       "color": "#8b5cf6",
-      "description": "科技情报收集、行业动态追踪（已暂停自动任务）"
+      "description": "科技情报收集、行业动态追踪"
     },
     {
       "id": "robin",
@@ -74,8 +74,9 @@
     {
       "bird": "owl",
       "name": "科技侦察报告",
-      "schedule": "手动触发",
-      "status": "paused",
+      "schedule": "每天 09:00",
+      "status": "active",
+      "cronId": "e7d03992",
       "description": "Product Hunt + Hugging Face + GitHub + Scour AI"
     },
     {
