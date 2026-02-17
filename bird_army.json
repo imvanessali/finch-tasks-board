@@ -7,36 +7,36 @@
       "name": "Finch",
       "emoji": "🐦",
       "role": "队长 · 协调指挥",
-      "model": "Claude Opus",
+      "model": "GLM-4.6V",
       "color": "#f59e0b",
       "description": "协调团队，安排任务，与 Vanessa 沟通"
-    },
-    {
-      "id": "owl",
-      "name": "Owl",
-      "emoji": "🦉",
-      "role": "日常监控",
-      "model": "Gemini Flash",
-      "color": "#8b5cf6",
-      "description": "科技情报收集、行业动态追踪"
     },
     {
       "id": "sparrow",
       "name": "Sparrow",
       "emoji": "🐥",
       "role": "SNS 猎手",
-      "model": "Gemini Flash",
+      "model": "GLM-4.6V",
       "color": "#22c55e",
       "description": "在社交平台挖掘潜在用户和产品摄影痛点"
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "emoji": "🦉",
+      "role": "日常监控",
+      "model": "手动触发",
+      "color": "#8b5cf6",
+      "description": "科技情报收集、行业动态追踪（已暂停自动任务）"
     },
     {
       "id": "robin",
       "name": "Robin",
       "emoji": "🐤",
       "role": "SEO 专员",
-      "model": "Claude Sonnet",
+      "model": "手动触发",
       "color": "#ef4444",
-      "description": "关键词研究、SEO 内容策略、博客撰写"
+      "description": "关键词研究、SEO 内容策略（已暂停自动任务）"
     }
   ],
   "tasks": [
@@ -56,14 +56,6 @@
       "description": "分配任务，汇报进展"
     },
     {
-      "bird": "owl",
-      "name": "科技侦察报告",
-      "schedule": "每天 09:00",
-      "status": "active",
-      "cronId": "1a2c228d",
-      "description": "Product Hunt + Hugging Face + GitHub + Scour AI"
-    },
-    {
       "bird": "sparrow",
       "name": "Twitter 潜在用户挖掘",
       "schedule": "每天 10:00",
@@ -80,20 +72,18 @@
       "description": "找小店主、手工卖家"
     },
     {
-      "bird": "robin",
-      "name": "关键词趋势研究",
-      "schedule": "手动触发 / 双周提醒",
-      "status": "manual",
-      "cronId": "a3f1c8d2",
-      "description": "分析 SEO 关键词搜索趋势和竞争度"
+      "bird": "owl",
+      "name": "科技侦察报告",
+      "schedule": "手动触发",
+      "status": "paused",
+      "description": "Product Hunt + Hugging Face + GitHub + Scour AI"
     },
     {
       "bird": "robin",
-      "name": "博客选题生成",
-      "schedule": "手动触发 / 双周提醒", 
-      "status": "manual",
-      "cronId": "b7e2d9f4",
-      "description": "基于关键词研究提出博客选题"
+      "name": "关键词趋势研究",
+      "schedule": "手动触发",
+      "status": "paused",
+      "description": "分析 SEO 关键词搜索趋势"
     }
   ]
 }

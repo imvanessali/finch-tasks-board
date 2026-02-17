@@ -14,7 +14,7 @@
       "agent": "Finch",
       "emoji": "🐦",
       "role": "队长 · 协调指挥",
-      "model": "Claude Opus",
+      "model": "GLM-4.6V",
       "tasks": [
         {
           "name": "早安问候 & 每日概览",
@@ -25,31 +25,7 @@
       ]
     },
     {
-      "id": "1a2c228d-e00c-4fe9-96e5-ed143fdf7809",
-      "agentId": "main",
-      "name": "Daily Tech Scout Report",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "agent": "Owl",
-      "emoji": "🦉",
-      "role": "日常监控",
-      "model": "Claude",
-      "tasks": [
-        {
-          "name": "科技侦察报告",
-          "schedule": "每天 09:00",
-          "desc": "Product Hunt + Hugging Face + GitHub + Scour AI",
-          "status": "active"
-        }
-      ]
-    },
-    {
-      "id": "sparrow-twitter",
+      "id": "0e7edc91-1177-4ba3-a89c-1abcea05d5a3",
       "agentId": "main",
       "name": "Sparrow: Twitter Hunter",
       "enabled": true,
@@ -62,14 +38,32 @@
       "agent": "Sparrow",
       "emoji": "🐥",
       "role": "SNS 猎手",
-      "model": "Gemini Flash",
+      "model": "GLM-4.6V",
       "tasks": [
         {
           "name": "Twitter 潜在用户挖掘",
           "schedule": "每天 10:00",
           "desc": "搜索产品摄影相关痛点推文 + 建议回复",
           "status": "active"
-        },
+        }
+      ]
+    },
+    {
+      "id": "6d117f97-990f-4774-9cd7-e807e6e0a5e8",
+      "agentId": "main",
+      "name": "Sparrow: Instagram Hunter",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "agent": "Sparrow",
+      "emoji": "🐥",
+      "role": "SNS 猎手",
+      "model": "GLM-4.6V",
+      "tasks": [
         {
           "name": "Instagram 潜在用户挖掘",
           "schedule": "每天 14:00",
@@ -77,40 +71,11 @@
           "status": "active"
         }
       ]
-    },
-    {
-      "id": "robin-seo",
-      "agentId": "main",
-      "name": "Robin: SEO Expert",
-      "enabled": false,
-      "schedule": {
-        "kind": "manual",
-        "note": "Bi-weekly reminder every Monday 09:00"
-      },
-      "sessionTarget": "main",
-      "agent": "Robin",
-      "emoji": "🐤",
-      "role": "SEO 专员",
-      "model": "Kimi K2.5",
-      "tasks": [
-        {
-          "name": "关键词趋势研究",
-          "schedule": "手动触发 / 双周提醒",
-          "desc": "分析 SEO 关键词搜索趋势和竞争度",
-          "status": "manual"
-        },
-        {
-          "name": "博客选题生成",
-          "schedule": "手动触发 / 双周提醒",
-          "desc": "基于关键词研究提出博客选题",
-          "status": "manual"
-        }
-      ]
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-02-14",
-    "version": "2.0",
-    "note": "Robin tasks changed from weekly auto to manual/bi-weekly reminder"
+    "lastUpdated": "2026-02-17",
+    "version": "3.0",
+    "note": "All tasks switched to GLM-4.6V; Owl and Robin jobs removed from cron (manual only)"
   }
 }
